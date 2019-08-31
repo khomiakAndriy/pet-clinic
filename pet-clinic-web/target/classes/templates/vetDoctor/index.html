@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vetDoctors')}">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title>Vet doctor page</title>
+</head>
+<body>
+<!--/*@thymesVar id="vatDoctor" type="com.springboot.petclinic.model.VetDoctor"*/-->
+<h1 th:text="'Vet doctor page'">Index page</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 150px;">First Name</th>
+        <th style="width: 150px;">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vatDoctor : ${vetDoctors}">
+        <td th:text="${vatDoctor.id}">1</td>
+        <td th:text="${vatDoctor.firstName}">Joe</td>
+        <td th:text="${vatDoctor.lastName}">Buck</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
